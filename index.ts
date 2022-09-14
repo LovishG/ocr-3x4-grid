@@ -19,24 +19,25 @@ const codedCharacters: any = {
     "      |_|| |": "H",
     "       |  | ": "I",
     "       | _| ": "J",
-    "      |/ |\ ": "K",
+    "      |/ |\\ ": "K",
     "      |  |_ ": "L",
     "": "M",
     " ": "N",
     "    _ | ||_|": "O",
     "    _ |_||  ": "P",
-    "    _ | ||\|": "Q",
-    " _ |_|| \   ": "R",
+    "    _ | ||\\|": "Q",
+    " _ |_|| \\   ": "R",
     "    _ |_  _|": "S",
     "       _  | ": "T",
     "      | ||_|": "u",
     "   ": "V",
     "    ": "w",
-    "\ / | / \   ": "X",
-    "\ / \ /     ": "y",
+    "\\ / | / \   ": "X",
+    "\\ / \ /     ": "y",
     "   _   / /_ ": "Z",
   };
   const button = document.querySelector('button');
+  const display:any= document.querySelector('.msg');
   const arrayOfIds = ['0-0','0-1','0-2','1-0','1-1','1-2','2-0','2-1','2-2','3-0','3-1', '3-2'];
   let str = '';
 
@@ -48,13 +49,17 @@ const codedCharacters: any = {
             inputboxValue = ' ';
         }
         str += inputboxValue;
-        console.log(i,str);
+        //console.log(i,str);
     }
     if(str in codedCharacters){
-            alert('your character is ===>'+ codedCharacters[str]);
+            //alert('your character is ===>'+ codedCharacters[str]);
+            display.style.display = 'block';
+            display.innerHTML = 'Character recognized as: ' + codedCharacters[str];
     }
     else {
-            alert('????????');
+            //alert('????????');
+            display.style.display = 'block';
+            display.innerHTML = 'Character Not Recognized: ?????';
     }
     str = '';
   });

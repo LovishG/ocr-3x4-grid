@@ -6,6 +6,7 @@ body {
     display: grid;
     justify-items: center;
     font-family: sans-serif;
+    background-color: rgb(192, 179, 214);
   }
   h2 {
     margin-bottom: 0px;
@@ -49,4 +50,15 @@ body {
   button:hover {
     border: solid 1px black;
     background-color: beige;
+  }
+
+  .msg{
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    height: auto;
+    width: auto;
+    background-color: bisque;
+    border-radius: 10px;
+    display: none;
   }

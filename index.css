@@ -36,3 +36,17 @@ body {
     width: 80px;
     background-color: rgba(200, 239, 188, 0.5);
   }
+
+  button{
+    background-color: aquamarine;
+    color: black;
+    height:30px;
+    width: 60px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    border: solid 1px black;
+    background-color: beige;
+  }

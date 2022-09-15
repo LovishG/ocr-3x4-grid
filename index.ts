@@ -36,10 +36,25 @@ const codedCharacters: any = {
     "\\ / \ /     ": "y",
     "   _   / /_ ": "Z",
   };
+  for (let r = 0; r < 4; r++) {
+    for (let c = 0; c < 3; c++) {
+      let input = document.createElement("input");
+      input.id = r.toString() + "-" + c.toString();
+      input.classList.add("inputBox");
+      input.setAttribute('maxlength', '1');
+      input.value = "";
+      const outerBox:any = document.getElementById("outer-box");
+      outerBox.appendChild(input);
+    }
+  }
+
+
   const button = document.querySelector('button');
   const display:any= document.querySelector('.msg');
+  const pattern = document.querySelectorAll('input');
   const arrayOfIds = ['0-0','0-1','0-2','1-0','1-1','1-2','2-0','2-1','2-2','3-0','3-1', '3-2'];
   let str = '';
+
 
   button?.addEventListener('click',function(){
     for(let i=0; i<arrayOfIds.length;i++){
@@ -65,20 +80,30 @@ const codedCharacters: any = {
   });
   
   
-  window.onload = function () {
-    setGame();
-  };
+  window.onload = ()=>{
 
-  function setGame() {
-    for (let r = 0; r < 4; r++) {
-      for (let c = 0; c < 3; c++) {
-        let input = document.createElement("input");
-        input.id = r.toString() + "-" + c.toString();
-        input.classList.add("inputBox");
-        input.setAttribute('maxlength', '1');
-        input.value = "";
-        const outerBox:any = document.getElementById("outer-box");
-        outerBox.appendChild(input);
-      }
-    }
+    pattern.forEach( input =>{
+  
+        input.addEventListener("keypress",(event)=>{
+  
+            let str = "|_/\\";
+  
+            if(!str.includes(event.key))
+  
+            {
+  
+                alert(`only "|"   "_"  "\\"   "/" are allowed`);
+  
+                event.preventDefault();          
+  
+            }
+  
+        })
+  
+    })
+  
   }
+
+  
+    
+  
